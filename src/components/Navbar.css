@@ -1,0 +1,30 @@
+.brand-name {
+    background-color: #308e36;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+    font-family: Arial;
+  }
+  li a {
+    display: block;
+    background-color: #303331;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+    font-family: Arial;
+  }
+  
+  li {
+    float:left;
+  }
+  li a:hover:not(.active) {
+    background-color: black;
+  }
+  ul {
+    list-style-type: none;
+    background-color: #303331;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px
+  }
