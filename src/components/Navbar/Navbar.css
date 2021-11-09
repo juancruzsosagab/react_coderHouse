@@ -1,7 +1,6 @@
 .brand-name {
     background-color: #308e36;
     display: block;
-    padding: 14px 16px;
     text-decoration: none;
     color: white;
     font-family: Arial;
@@ -27,4 +26,14 @@
     overflow: hidden;
     padding: 0px;
     margin: 0px
+  }
+
+  li:last-child {
+    float:right !important; 
+    
+  }
+
+  li:last-child img {
+    height: 20px;
+  
   }
