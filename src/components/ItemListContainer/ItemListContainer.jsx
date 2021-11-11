@@ -1,10 +1,10 @@
 import { Fragment } from "react";
 
 
-const ItemListContainer = () =>{
+const ItemListContainer = (props) =>{
     return (
         <Fragment>
-            <h1>Rendering</h1>
+            <h1>{props.greeting}</h1>
         </Fragment>
 
     )

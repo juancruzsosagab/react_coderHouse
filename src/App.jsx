@@ -9,9 +9,7 @@ function App() {
     <Navbar>
     <CartWidget/>
     </Navbar>
-    <ItemListContainer />
-   
-  
+    <ItemListContainer greeting="Saludos de prueba" />
     </>
   );
 }

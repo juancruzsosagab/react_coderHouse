@@ -1,8 +1,13 @@
 import carritoCompras from  './carrito-de-compras.png';
+import { Fragment } from "react";
 
-function CartWidget(){
+const CartWidget = () =>{
 
-    return <img src={carritoCompras} alt="Logo" />
+    return (
+    <Fragment>
+    <img src={carritoCompras} alt="Logo" />
+    </Fragment>
+    )
 }
 
 export default CartWidget;
