@@ -12,4 +12,4 @@ Esta es la maqueta de mi proyecto. Todavía no tengo definido el negocio real qu
 
 ### Gif navegabilidad
 
-
+![Alt Text](https://media.giphy.com/media/5j926mWP86hU8IgAVM/giphy.gif)
