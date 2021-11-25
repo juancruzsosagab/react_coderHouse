@@ -1,24 +1,24 @@
 import './Navbar.css'
-
+import { Link } from 'react-router-dom'
 
 const Navbar = (props) => {
     return ( 
 
     <ul>
-        <li><a href='google.com'>Home</a></li>
-        <li><a href='google.com'>About us</a></li>
-        <li><a href='google.com'>Projects</a></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/'>About us</Link></li>
+        <li><Link to='/'>Projects</Link></li>
         <li> 
             <div className="dropdown">      
-                <a href="google.com" className="dropbtn">Products</a>
+                <Link to="/" className="dropbtn">Categorías</Link>
                     <div className="dropdown-content">
-                        <a href="google.com">Type 1</a>
-                        <a href="google.com">Type 2</a>
-                        <a href="google.com">Type 3</a>
+                        <Link to="/category/1">Type 1</Link>
+                        <Link to="/category/2">Type 2</Link>
+                        <Link to="/category/3">Type 3</Link>
                     </div>
             </div>        
         </li>
-        <li className='brand-name'><a href='google.com'>{props.children}</a></li>
+        <li className='brand-name'><Link to='/'>{props.children}</Link></li>
     </ul>
     
 
