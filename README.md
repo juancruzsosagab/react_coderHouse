@@ -1,6 +1,6 @@
 # Proyecto Coder House
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).(En la próxima entrega)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)(En la próxima entrega).
 
 ### `yarn start`
 
