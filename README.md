@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `yarn start`
 
-Para inicializar la app, hay que ejecutar este comando en consola. Luego, se debe ingresar en el navegador la siguiente URL: http://localhost:3000
+Para inicializar la app, hay que ejecutar este comando en consola(teniendo instalado el modulo de node). Luego, se debe ingresar en el navegador la siguiente URL: http://localhost:3000
 
 ### Descripción
 
