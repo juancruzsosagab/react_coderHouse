@@ -10,6 +10,6 @@ Para inicializar la app, hay que ejecutar este comando en consola. Luego, se deb
 
 Esta es la maqueta de mi proyecto. Todavía no tengo definido el negocio real que utilizaría, pero por ahora he ingresado datos de prueba.
 
-### Gif navegabilidad:
+### Gif navegabilidad
 
 
