@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import ItemCount from "../ItemCount/ItemCount";
+
 
 const ItemDetail = ({ item }) => {
   return (
@@ -7,6 +9,7 @@ const ItemDetail = ({ item }) => {
       <img src={item.pictureUrl} alt="" />
       <p>{item.description}</p>
       <p>$ {item.price}</p>
+      <ItemCount stock={item.stock} initial={1} /> 
     </Fragment>
   );
 };

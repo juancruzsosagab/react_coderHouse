@@ -5,7 +5,8 @@ const items = [
         id: "1",
         pictureUrl: '/img/box.png',
         description: "Descripción de prueba 1",
-        category: "1"
+        category: "1",
+        stock: 5
     },
     {
         title: "Item 2",
@@ -13,7 +14,8 @@ const items = [
         id: "2",
         pictureUrl: '/img/box.png',
         description: "Descripción de prueba 2",
-        category: "2"
+        category: "2",
+        stock: 8
     },
     {
         title: "Item 3",
@@ -21,7 +23,8 @@ const items = [
         id: "3",
         pictureUrl: '/img/box.png',
         description: "Descripción de prueba 2",
-        category: "3"
+        category: "3",
+        stock: 9
     }
 ];
 
