@@ -1,9 +1,9 @@
 import { useState, Fragment } from "react";
-import Button from "react-bootstrap/Button";
+import Button from 'react-bootstrap/Button';
 
-const ItemCount = (props) => {
-  const [stock, setStock] = useState(props.stock);
-  const [counter, setCounter] = useState(Number(props.initial));
+const ItemCount = ({ itemStock, initial, onAdd }) => {
+  const [stock, setStock] = useState(itemStock);
+  const [counter, setCounter] = useState(Number(initial));
 
   const add = () => {
     if (stock > 1) {
@@ -27,8 +27,11 @@ const ItemCount = (props) => {
       <Button variant="success" onClick={add}>
         Add
       </Button>
-      <Button variant="warning" onClick={sub}>
+      <Button variant="danger" onClick={sub}>
         Sub
+      </Button>
+      <Button variant="primary" onClick={() => onAdd(counter)}>
+        Agregar al carro
       </Button>
     </Fragment>
   );
