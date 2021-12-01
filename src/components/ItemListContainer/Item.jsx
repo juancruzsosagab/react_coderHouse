@@ -1,17 +1,24 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 const Item = ({ id, title, price, pictureUrl, description }) => {
   return (
     <Fragment>
-      <p>{title}</p>
-      <img src={pictureUrl} alt="" />
-      <p>$ {price}</p>
-      <p>{description}</p>
-
-      <Link to={`/product/${id}`}>
-        <input type="button" value="Ver detalle" />
-      </Link>
+      <Card style={{ width: "18rem" }}>
+        <Card.Img variant="top" src={pictureUrl} />
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>
+            <p>$ {price}</p>
+            <p>{description}</p>
+          </Card.Text>
+          <Link to={`/product/${id}`}>
+            <Button variant="primary">Ver detalle</Button>
+          </Link>
+        </Card.Body>
+      </Card>
     </Fragment>
   );
 };

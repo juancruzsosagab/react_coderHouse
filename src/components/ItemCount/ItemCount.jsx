@@ -1,6 +1,8 @@
 import { useState, Fragment } from "react";
 import Button from 'react-bootstrap/Button';
 
+
+
 const ItemCount = ({ itemStock, initial, onAdd }) => {
   const [stock, setStock] = useState(itemStock);
   const [counter, setCounter] = useState(Number(initial));
@@ -21,8 +23,7 @@ const ItemCount = ({ itemStock, initial, onAdd }) => {
 
   return (
     <Fragment>
-      <h1>Product: Producto</h1>
-      <h2>{counter}</h2>
+      <h2>Cantidad: {counter}</h2>
       {/*<p>Stock: {stock}</p>*/}
       <Button variant="success" onClick={add}>
         Add
