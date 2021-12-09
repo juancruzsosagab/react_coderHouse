@@ -5,26 +5,26 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer.
 /*import ItemCount from  './components/ItemCount/ItemCount.jsx';*/
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { CartContextProvider } from "./context/CartContext";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Navbar>
-          <CartWidget />
-        </Navbar>
-        <Routes>
-          <Route
-            path="/"
-            element={<ItemListContainer title="Productos" />}
-          />
-          <Route path="/category/:cat" element={<ItemListContainer />} />
-          <Route path="/product/:id" element={<ItemDetailContainer />} />
-        </Routes>
-        {/* <ItemListContainer greeting="Saludos de prueba" />
+      <CartContextProvider>
+        <BrowserRouter>
+          <Navbar>
+            <CartWidget />
+          </Navbar>
+          <Routes>
+            <Route path="/" element={<ItemListContainer title="Productos" />} />
+            <Route path="/category/:cat" element={<ItemListContainer />} />
+            <Route path="/product/:id" element={<ItemDetailContainer />} />
+          </Routes>
+          {/* <ItemListContainer greeting="Saludos de prueba" />
     <ItemCount stock="5" initial="1" /> */}
-      </BrowserRouter>
+        </BrowserRouter>
+      </CartContextProvider>
     </>
   );
 }

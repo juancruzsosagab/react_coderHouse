@@ -1,11 +1,14 @@
-import { useState, Fragment } from "react";
-import Button from 'react-bootstrap/Button';
+import { useState, Fragment, useContext } from "react";
+import { Link } from "react-router-dom";
+import CartContext from "../../context/CartContext";
+import Button from "react-bootstrap/Button";
 
-
-
-const ItemCount = ({ itemStock, initial, onAdd }) => {
+const ItemCount = ({ itemStock, initial, item }) => {
   const [stock, setStock] = useState(itemStock);
   const [counter, setCounter] = useState(Number(initial));
+  const [compra, setCompra] = useState(false);
+  const { addItem } = useContext(CartContext)
+  
 
   const add = () => {
     if (stock > 1) {
@@ -21,6 +24,12 @@ const ItemCount = ({ itemStock, initial, onAdd }) => {
     }
   };
 
+  const onAdd = () => {
+    setCompra(true);
+    
+    addItem(item, counter )
+  };
+
   return (
     <Fragment>
       <h2>Cantidad: {counter}</h2>
@@ -34,6 +43,11 @@ const ItemCount = ({ itemStock, initial, onAdd }) => {
       <Button variant="primary" onClick={() => onAdd(counter)}>
         Agregar al carro
       </Button>
+      {compra && (
+        <Link to={`/cart`}>
+          <input type="button" value="Terminar compra" />
+        </Link>
+      )}
     </Fragment>
   );
 };

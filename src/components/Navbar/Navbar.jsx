@@ -14,11 +14,11 @@ const Navbar = (props) => {
         <Link to="/">Projects</Link>
       </li>
       <li>
-        <div className="dropdown">
+        <div className="dropdown1">
           <Link to="/" className="dropbtn">
             Categorías
           </Link>
-          <div className="dropdown-content">
+          <div className="dropdown1-content">
             <Link to="/category/1">Type 1</Link>
             <Link to="/category/2">Type 2</Link>
             <Link to="/category/3">Type 3</Link>
