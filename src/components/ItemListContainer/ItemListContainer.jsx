@@ -15,14 +15,16 @@ const ItemListContainer = (props) => {
     setLoading(true);
     getDocs(ref)
       .then((snapShot) => {
-        snapShot.docs.map((doc) => setProducts([...products, doc.data()]));
-        
-      })
-      .then(() => {
-        console.log(products)
-        cat &&
-          setProducts(products.filter((category) => category.category === cat));
+        const arrayNew = snapShot.docs.map((doc) => doc.data());
 
+        setProducts(arrayNew);
+        console.log(cat);
+        cat &&
+          setProducts(arrayNew.filter((category) => category.category === cat));
+          console.log(products)
+      })
+
+      .then(() => {
         setLoading(false);
       });
   }, [cat]);
