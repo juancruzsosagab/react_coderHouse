@@ -1,14 +1,33 @@
 import ItemList from "./ItemList";
-import items from "./Items";
 import { useState, Fragment, useEffect } from "react";
 import { useParams } from "react-router";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const ItemListContainer = (props) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const { cat } = useParams();
 
+  const db = getFirestore();
+  const ref = collection(db, "products");
+
   useEffect(() => {
+    setLoading(true);
+    getDocs(ref)
+      .then((snapShot) => {
+        snapShot.docs.map((doc) => setProducts([...products, doc.data()]));
+        
+      })
+      .then(() => {
+        console.log(products)
+        cat &&
+          setProducts(products.filter((category) => category.category === cat));
+
+        setLoading(false);
+      });
+  }, [cat]);
+
+  /* useEffect(() => {
     setLoading(true);
     const callItems = new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -30,7 +49,7 @@ const ItemListContainer = (props) => {
       .catch((error) => {
         console.log(error);
       });
-  }, [cat]);
+  }, [cat]);*/
 
   return (
     <Fragment>

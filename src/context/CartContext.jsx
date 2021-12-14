@@ -14,8 +14,14 @@ export function CartContextProvider({ children }) {
     }
   };
 
+  const removeItem = (item)=>{
+    const cartNew = cart.filter(cartItem=>cartItem.id!==item.id);
+    setCart(cartNew);
+    console.log(cart)
+  }
+
   return (
-    <CartContext.Provider value={{ addItem, cart }}>
+    <CartContext.Provider value={{ addItem, removeItem, cart }}>
       {children}
     </CartContext.Provider>
   );
