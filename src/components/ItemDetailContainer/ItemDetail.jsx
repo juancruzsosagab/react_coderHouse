@@ -15,7 +15,7 @@ const ItemDetail = ({ item }) => {
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>{item.description}</Card.Text>
 
-          <ItemCount itemStock={item.stock} initial={1} item={item}/>
+          <ItemCount itemStock={item.stock} initial={1} item={item} />
         </Card.Body>
         <Card.Footer className="text-muted">${item.price}</Card.Footer>
       </Card>

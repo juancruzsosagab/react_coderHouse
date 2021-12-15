@@ -7,8 +7,7 @@ const ItemCount = ({ itemStock, initial, item }) => {
   const [stock, setStock] = useState(itemStock);
   const [counter, setCounter] = useState(Number(initial));
   const [compra, setCompra] = useState(false);
-  const { addItem } = useContext(CartContext)
-  
+  const { addItem } = useContext(CartContext);
 
   const add = () => {
     if (stock > 1) {
@@ -26,8 +25,8 @@ const ItemCount = ({ itemStock, initial, item }) => {
 
   const onAdd = () => {
     setCompra(true);
-    
-    addItem(item, counter )
+
+    addItem(item, counter);
   };
 
   return (
@@ -40,13 +39,20 @@ const ItemCount = ({ itemStock, initial, item }) => {
       <Button variant="danger" onClick={sub}>
         Sub
       </Button>
-      <Button variant="primary" onClick={() => onAdd(counter)}>
-        Agregar al carro
-      </Button>
-      {compra && (
-        <Link to={`/cart`}>
-          <input type="button" value="Terminar compra" />
-        </Link>
+
+      {compra ? (
+        <>
+          <Link to={`/`}>
+            <input type="button" value="Seguir comprando" />
+          </Link>
+          <Link to={`/cart`}>
+            <input type="button" value="Terminar compra" />
+          </Link>
+        </>
+      ) : (
+        <Button variant="primary" onClick={() => onAdd(counter)}>
+          Agregar al carro
+        </Button>
       )}
     </Fragment>
   );
