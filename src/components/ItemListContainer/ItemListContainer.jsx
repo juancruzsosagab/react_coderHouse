@@ -1,7 +1,13 @@
 import ItemList from "./ItemList";
 import { useState, Fragment, useEffect } from "react";
 import { useParams } from "react-router";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 
 const ItemListContainer = (props) => {
   const [products, setProducts] = useState([]);
@@ -9,49 +15,25 @@ const ItemListContainer = (props) => {
   const { cat } = useParams();
 
   const db = getFirestore();
-  const ref = collection(db, "products");
+  const ref = cat
+    ? query(collection(db, "products"), where("category", "==", cat))
+    : collection(db, "products");
 
   useEffect(() => {
     setLoading(true);
     getDocs(ref)
       .then((snapShot) => {
-        const arrayNew = snapShot.docs.map((doc) => doc.data());
-
+        const arrayNew = snapShot.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+        console.log(arrayNew)
         setProducts(arrayNew);
-        console.log(cat);
-        cat &&
-          setProducts(arrayNew.filter((category) => category.category === cat));
-          console.log(products)
       })
 
       .then(() => {
         setLoading(false);
       });
   }, [cat]);
-
-  /* useEffect(() => {
-    setLoading(true);
-    const callItems = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (true) {
-          resolve(items);
-        } else {
-          reject("ups error");
-        }
-      }, 2000);
-    });
-
-    callItems
-      .then((res) => {
-        cat
-          ? setProducts(res.filter((category) => category.category === cat))
-          : setProducts(res);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [cat]);*/
 
   return (
     <Fragment>
