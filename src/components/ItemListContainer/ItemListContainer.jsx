@@ -14,19 +14,18 @@ const ItemListContainer = (props) => {
   const [loading, setLoading] = useState(false);
   const { cat } = useParams();
 
-  const db = getFirestore();
-  const ref = cat
-    ? query(collection(db, "products"), where("category", "==", cat))
-    : collection(db, "products");
-
   useEffect(() => {
+    const db = getFirestore();
+    const ref = cat
+      ? query(collection(db, "products"), where("category", "==", cat))
+      : collection(db, "products");
     setLoading(true);
     getDocs(ref)
       .then((snapShot) => {
         const arrayNew = snapShot.docs.map((doc) => {
           return { ...doc.data(), id: doc.id };
         });
-        console.log(arrayNew)
+        console.log(arrayNew);
         setProducts(arrayNew);
       })
 

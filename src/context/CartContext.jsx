@@ -4,6 +4,16 @@ const CartContext = React.createContext();
 
 export function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
+  let total;
+
+  const calculateTotal = ()=>{
+    cart.length >= 1 ?
+    cart.map(()=>{
+    return  console.log("hola")
+    })
+    :console.log("hola")
+    }
+  
 
   const addItem = (item, quantity) => {
     const findCart = cart.findIndex((cart) => cart.id === item.id);
@@ -14,11 +24,10 @@ export function CartContextProvider({ children }) {
     }
   };
 
-  const removeItem = (item)=>{
-    const cartNew = cart.filter(cartItem=>cartItem.id!==item.id);
+  const removeItem = (item) => {
+    const cartNew = cart.filter((cartItem) => cartItem.id !== item.id);
     setCart(cartNew);
-    console.log(cart)
-  }
+  };
 
   return (
     <CartContext.Provider value={{ addItem, removeItem, cart }}>

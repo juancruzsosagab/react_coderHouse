@@ -14,12 +14,12 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
-  const db = getFirestore();
-  const ref = id
-    ? query(collection(db, "products"), where("id", "==", id))
-    : collection(db, "products");
-
   useEffect(() => {
+    const db = getFirestore();
+    const ref = id
+      ? query(collection(db, "products"), where("id", "==", id))
+      : collection(db, "products");
+
     setLoading(true);
 
     getDocs(ref)

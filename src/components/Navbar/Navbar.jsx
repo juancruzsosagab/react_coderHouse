@@ -1,5 +1,4 @@
 import "./Navbar.css";
-import Cartxample from "./Cart"
 import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
