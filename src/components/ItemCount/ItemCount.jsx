@@ -8,6 +8,7 @@ const ItemCount = ({ itemStock, initial, item }) => {
   const [counter, setCounter] = useState(Number(initial));
   const [compra, setCompra] = useState(false);
   const { addItem } = useContext(CartContext);
+  
 
   const add = () => {
     if (stock > 1) {

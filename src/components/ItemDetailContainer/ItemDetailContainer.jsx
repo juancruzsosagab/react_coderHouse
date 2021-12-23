@@ -15,12 +15,11 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    setLoading(true);
     const db = getFirestore();
     const ref = id
       ? query(collection(db, "products"), where("id", "==", id))
       : collection(db, "products");
-
-    setLoading(true);
 
     getDocs(ref)
       .then((snapShot) => {
@@ -29,7 +28,9 @@ const ItemDetailContainer = () => {
         });
         setItemData(arrayNew[0]);
       })
-      .then(setLoading(false));
+      .finally(() => {
+        setLoading(false);
+      });
   }, [id]);
 
   return (

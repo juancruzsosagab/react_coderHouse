@@ -48,7 +48,7 @@ export function CartContextProvider({ children }) {
   const ref = collection(db,"orders");
    
   addDoc(ref, newOrder)
-  console.log(newOrder)
+  
 
 
   return (
