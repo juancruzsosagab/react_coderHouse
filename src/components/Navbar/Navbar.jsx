@@ -26,7 +26,7 @@ const Navbar = (props) => {
         </div>
       </li>
       <li className="brand-name">
-        <Link to="/">{props.children}</Link>
+        <Link to="/cart">{props.children}</Link>
       </li>
     </ul>
   );

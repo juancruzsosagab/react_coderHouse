@@ -47,7 +47,7 @@ const ItemCount = ({ itemStock, initial, item }) => {
             <input type="button" value="Seguir comprando" />
           </Link>
           <Link to={`/cart`}>
-            <input type="button" value="Terminar compra" />
+            <input type="button" value="Ir al carro de compras" />
           </Link>
         </>
       ) : (
