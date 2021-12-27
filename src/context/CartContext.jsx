@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 const CartContext = React.createContext();
 
 export function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
-  const [OrderId, setOrderId] = useState("");
 
   const addItem = (item, quantity) => {
     const findCart = cart.findIndex((cartItem) => cartItem.id === item.id);
@@ -37,15 +35,6 @@ export function CartContextProvider({ children }) {
   };
 
   // Avance cración de orden, hardcodeada
-  const newOrder = {
-    name: "juan",
-    phone: 2613733585,
-    email: "juancruz.sosag@gmail.com",
-  };
-  const db = getFirestore();
-  const ref = collection(db, "orders");
-
-  addDoc(ref, newOrder);
 
   return (
     <CartContext.Provider value={{ addItem, removeItem, cart, total }}>
