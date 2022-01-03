@@ -7,7 +7,10 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./context/CartContext";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Cartxample from "./components/Cart/Cart.jsx";
+import CartMain from "./components/Cart/Cart.jsx";
+import About from "./components/About/About";
+import Proyects from "./components/Projects/Projects";
+
 
 
 function App() {
@@ -20,9 +23,12 @@ function App() {
           </Navbar>
           <Routes>
             <Route path="/" element={<ItemListContainer title="Productos" />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/proyects" element={<Proyects />} />
+            <Route path="/category" element={<ItemListContainer title="Productos" />} />
             <Route path="/category/:cat" element={<ItemListContainer />} />
             <Route path="/product/:id" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<Cartxample />} />
+            <Route path="/cart" element={<CartMain />} />
           </Routes>
           {/* <ItemListContainer greeting="Saludos de prueba" />
     <ItemCount stock="5" initial="1" /> */}

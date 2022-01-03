@@ -5,6 +5,7 @@ const CartContext = React.createContext();
 export function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+  const [totalQuantity, setTotalQuantity] = useState(0);
 
   const addItem = (item, quantity) => {
     const findCart = cart.findIndex((cartItem) => cartItem.id === item.id);
@@ -14,6 +15,7 @@ export function CartContextProvider({ children }) {
         { ...item, quantity, subtotal: item.price * quantity },
       ]);
       setTotal(total + quantity * item.price);
+      setTotalQuantity(totalQuantity + quantity)
     } else {
       const cartSameNew = cart.map((cartItem) => {
         if (cartItem.id === item.id) {
@@ -25,6 +27,7 @@ export function CartContextProvider({ children }) {
 
       setCart(cartSameNew);
       setTotal(total + quantity * item.price);
+      setTotalQuantity(totalQuantity + quantity)
     }
   };
 
@@ -32,12 +35,13 @@ export function CartContextProvider({ children }) {
     const cartNew = cart.filter((cartItem) => cartItem.id !== item.id);
     setCart(cartNew);
     setTotal(total - item.subtotal);
+    setTotalQuantity(totalQuantity - item.quantity)
   };
 
   // Avance cración de orden, hardcodeada
 
   return (
-    <CartContext.Provider value={{ addItem, removeItem, cart, total }}>
+    <CartContext.Provider value={{ addItem, removeItem, cart, total, totalQuantity }}>
       {children}
     </CartContext.Provider>
   );

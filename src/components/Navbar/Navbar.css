@@ -28,7 +28,8 @@
     background-color: #303331;
     overflow: hidden;
     padding: 0px;
-    margin: 0px
+    margin: 0px;
+   
   }
 
 .dropbtn {
@@ -67,8 +68,21 @@
 
   li:last-child {
       float:right !important; 
+      height: 40px;
+      margin-top: -5px;
+      display: flex;
+      flex-direction: column;
   }
 
+  li:last-child .basketitems{
+    justify-self: flex-end;
+
+}
   li:last-child img {
     height: 20px;
   }
+
+.active{
+  color: rgb(255, 136, 0);
+  text-decoration: underline;
+}

@@ -1,32 +1,47 @@
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = (props) => {
   return (
     <ul>
       <li>
-        <Link to="/">Home</Link>
+        <NavLink to="/" activeclassname="active">
+          Home
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink to="/about" activeclassname="active">
+          About us
+        </NavLink>
       </li>
       <li>
-        <Link to="/">About us</Link>
-      </li>
-      <li>
-        <Link to="/">Projects</Link>
+        <NavLink to="/proyects" activeclassname="active">
+          Projects
+        </NavLink>
       </li>
       <li>
         <div className="dropdown1">
-          <Link to="/" className="dropbtn">
+          <NavLink to="/category" className="dropbtn" activeclassname="active">
             Categorías
-          </Link>
+          </NavLink>
           <div className="dropdown1-content">
-            <Link to="/category/1">Type 1</Link>
-            <Link to="/category/2">Type 2</Link>
-            <Link to="/category/3">Type 3</Link>
+            <NavLink to="/category/1" activeclassname="active">
+              Type 1
+            </NavLink>
+            <NavLink to="/category/2" activeclassname="active">
+              Type 2
+            </NavLink>
+            <NavLink to="/category/3" activeclassname="active">
+              Type 3
+            </NavLink>
           </div>
         </div>
       </li>
       <li className="brand-name">
-        <Link to="/cart">{props.children}</Link>
+        <NavLink to="/cart" activeclassname="active">
+          {props.children}
+        </NavLink>
       </li>
     </ul>
   );

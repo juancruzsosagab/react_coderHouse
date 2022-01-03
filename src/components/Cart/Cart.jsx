@@ -4,7 +4,7 @@ import CartContext from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 
-const Cartxample = () => {
+const CartMain = () => {
   const { cart, removeItem, total } = useContext(CartContext);
   const [orderId, setOrderId] = useState("");
 
@@ -57,4 +57,4 @@ const Cartxample = () => {
   );
 };
 
-export default Cartxample;
+export default CartMain;
