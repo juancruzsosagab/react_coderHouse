@@ -31,10 +31,10 @@ const CartMain = () => {
   console.log(cart);
   return cart[0] ? (
     <>
-      {cart.map((items) => {
+      {cart.map((items, index) => {
         return (
           <>
-            <div key={items.id}>
+            <div key={index} id={items.id}>
               <h1>{items.title}</h1>
               <p>Precio individual: ${items.price}</p>
               <p>Cantidad: {items.quantity} items</p>
