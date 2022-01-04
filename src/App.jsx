@@ -10,6 +10,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CartMain from "./components/Cart/Cart.jsx";
 import About from "./components/About/About";
 import Proyects from "./components/Projects/Projects";
+import CheckOutForm from "./components/Cart/CheckOutForm";
+import SignIn from "./components/SignIn/SignIn";
 
 
 
@@ -29,6 +31,9 @@ function App() {
             <Route path="/category/:cat" element={<ItemListContainer />} />
             <Route path="/product/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<CartMain />} />
+            <Route path="/checkout" element={<CheckOutForm />} />
+            <Route path="/signin" element={<SignIn />} />
+
           </Routes>
           {/* <ItemListContainer greeting="Saludos de prueba" />
     <ItemCount stock="5" initial="1" /> */}
