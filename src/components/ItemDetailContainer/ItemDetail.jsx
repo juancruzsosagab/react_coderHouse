@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ item }) => {
+  
   return (
     <Fragment>
       {item.id ? (
