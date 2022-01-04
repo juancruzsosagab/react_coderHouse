@@ -10,7 +10,8 @@ Para inicializar la app, hay que ejecutar este comando en consola(teniendo insta
 
  1. Acceder la página principal del repositorio: https://github.com/juancruzsosagab/react_coderHouse/
  2. Sobre la lista de archivos, se debe seleccionar código/code
- 
+ ![github](https://imgur.com/a/Q9UjAFV)
+ 3. 
  4. asd
 
 ### Descripción
