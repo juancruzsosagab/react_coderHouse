@@ -25,7 +25,6 @@ const ItemListContainer = (props) => {
         const arrayNew = snapShot.docs.map((doc) => {
           return { ...doc.data(), id: doc.id };
         });
-        console.log(arrayNew);
         setProducts(arrayNew);
       })
 
