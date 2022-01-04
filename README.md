@@ -22,7 +22,7 @@ Para inicializar la app, hay que ejecutar este comando en consola(teniendo insta
  
   > ** $ git clone https://github.com/juancruzsosagab/react_coderHouse.git **
 
-### Descripción
+### `Descripción de proyecto`
 
 Esta es la maqueta de mi proyecto. Es un e-commerce con productos de prueba.
 
@@ -46,9 +46,9 @@ También, se está trabajando en dos métodos de autenticación. Uno general y o
 
 
 
-### Gif navegabilidad
+### `Gif navegabilidad`
 
-![Alt Text](https://media.giphy.com/media/5j926mWP86hU8IgAVM/giphy.gif)
+![Alt Text](https://media.giphy.com/media/V4BWcwXu0PtjkCpI3c/giphy.gif)
 
 
 ## Agradecimiento especial a profesor y tutor 🎁
