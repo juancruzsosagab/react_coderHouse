@@ -13,8 +13,6 @@ import Proyects from "./components/Projects/Projects";
 import CheckOutForm from "./components/Cart/CheckOutForm";
 import SignIn from "./components/SignIn/SignIn";
 
-
-
 function App() {
   return (
     <>
@@ -27,16 +25,16 @@ function App() {
             <Route path="/" element={<ItemListContainer title="Productos" />} />
             <Route path="/about" element={<About />} />
             <Route path="/proyects" element={<Proyects />} />
-            <Route path="/category" element={<ItemListContainer title="Productos" />} />
+            <Route
+              path="/category"
+              element={<ItemListContainer title="Productos" />}
+            />
             <Route path="/category/:cat" element={<ItemListContainer />} />
             <Route path="/product/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<CartMain />} />
             <Route path="/checkout" element={<CheckOutForm />} />
             <Route path="/signin" element={<SignIn />} />
-
           </Routes>
-          {/* <ItemListContainer greeting="Saludos de prueba" />
-    <ItemCount stock="5" initial="1" /> */}
         </BrowserRouter>
       </CartContextProvider>
     </>

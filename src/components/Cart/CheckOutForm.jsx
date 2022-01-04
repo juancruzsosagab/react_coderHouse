@@ -96,7 +96,7 @@ const CheckOutForm = () => {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Submit
+          Realizar compra
         </Button>
       </Form>
     </>
