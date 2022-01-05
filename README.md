@@ -1,6 +1,6 @@
 # Proyecto Coder House 🚀🚀
 
-This project was bootstrapped with [React bootsrap](https://react-bootstrap.github.io/)(En la próxima entrega).
+This project was bootstrapped with [React bootsrap](https://react-bootstrap.github.io/).
 External libraries:
 [React-router-dom](https://v5.reactrouter.com/web/guides/quick-start/).
 [Firebase](https://firebase.google.com/).
